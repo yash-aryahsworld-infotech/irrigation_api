@@ -1,0 +1,18 @@
+# Django core
+Django>=4.2,<5.0
+djangorestframework>=3.14.0
+
+# HTTP requests
+requests>=2.31.0
+
+# Data validation
+pydantic>=2.0
+
+# Environment variables
+python-dotenv>=1.0.0
+
+# Production server (optional)
+gunicorn>=21.2.0
+
+# CORS (if frontend is separate)
+django-cors-headers>=4.3.0
