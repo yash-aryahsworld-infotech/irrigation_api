@@ -9,6 +9,7 @@ from rest_framework.response import Response
 from rest_framework import status
 from .serializers import PredictionRequestSerializer, IrrigationResultSerializer
 from dotenv import load_dotenv
+from rest_framework import status
 
 # --- 1. CORE LOGIC & MODELS (Integrated for easy deployment) ---
 load_dotenv()   
@@ -26,6 +27,21 @@ class IrrigationRequirement(BaseModel):
     field_size_sq_meter: float
     required_water_liters: float
     reasoning: str
+    
+    
+    
+class HealthCheckAPIView(APIView):
+    """
+    Health check endpoint to verify server is running
+    """
+    def get(self, request, *args, **kwargs):
+        return Response(
+            {
+                "status": "ok",
+                "message": "Irrigation Prediction API is running 🚀"
+            },
+            status=status.HTTP_200_OK
+        )    
 
 # Helper 1: Geocoding Function (City -> Lat/Lon)
 def get_coords_from_city(city: str) -> Optional[tuple[float, float]]:
