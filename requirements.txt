@@ -1,5 +1,5 @@
 # Django core
-Django>=4.2,<5.0
+django
 djangorestframework>=3.14.0
 python-dotenv
 
