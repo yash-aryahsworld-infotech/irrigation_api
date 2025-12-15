@@ -1,0 +1,14 @@
+{
+  "builds": [
+    {
+      "src": "irrigation_project/wsgi.py",
+      "use": "@vercel/python"
+    }
+  ],
+  "routes": [
+    {
+      "src": "/(.*)",
+      "dest": "irrigation_project/wsgi.py"
+    }
+  ]
+}

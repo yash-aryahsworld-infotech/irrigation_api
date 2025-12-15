@@ -8,12 +8,12 @@ from rest_framework.views import APIView
 from rest_framework.response import Response
 from rest_framework import status
 from .serializers import PredictionRequestSerializer, IrrigationResultSerializer
-
+from dotenv import load_dotenv
 
 # --- 1. CORE LOGIC & MODELS (Integrated for easy deployment) ---
-
+load_dotenv()   
 # Replace with your actual key
-OPENWEATHER_API_KEY = "d7450375592754b59457b522cfd4d97c" 
+OPENWEATHER_API_KEY = os.getenv("OPENWEATHER_API_KEY")
 WEATHER_BASE_URL = "https://api.openweathermap.org/data/2.5/weather"
 GEOCODING_BASE_URL = "http://api.openweathermap.org/geo/1.0/direct"
 
